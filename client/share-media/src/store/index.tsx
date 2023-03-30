@@ -42,6 +42,18 @@ export const authSlice = createSlice({
         } else {
             state.user.friends = action.payload.friends
         }
+    },
+    setPosts: (state, action) => {
+        state.posts = action.payload.posts
+    }, 
+    setPost: (state, action) => {
+      const updatedPosts = (state.posts ?? []).map(post => {
+        if (post._id === action.payload.post._id ){return action.payload.post}
+        return post
+      })
+          state.posts = updatedPosts
     }
   }
-})
+});
+
+export const { setMode, setFriends, setLogins, setLogout, setPost, setPosts } = authSlice.actions;
