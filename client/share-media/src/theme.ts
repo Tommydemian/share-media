@@ -32,7 +32,7 @@ export const colorTokens = {
   export const themeSettings = (mode: string) => {
     return {
       palette: {
-        mode: mode,
+         mode: mode as "light" | "dark" | undefined,
         ...(mode === "dark"
           ? {
               // palette values for dark mode

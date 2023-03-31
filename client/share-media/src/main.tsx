@@ -7,6 +7,7 @@ import './index.css'
 import { authSlice } from './store'
 const {reducer: authReducer} = authSlice
 import { configureStore } from '@reduxjs/toolkit'
+import { getDefaultMiddleware } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux'
 import {
   // FLUSH,
@@ -25,10 +26,11 @@ const persistedReducer = persistReducer(persistConfig, authReducer)
 // Store definition.
 const store = configureStore({
   reducer: persistedReducer,
+  
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware({
       serializableCheck: {
-        ignoreActions: false
+        ignoreActions: true
       }
     })
   }

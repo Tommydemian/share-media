@@ -1,14 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-interface InitialState {
-    mode: string,
-    user: {
-        name: string | null, 
-        friends: string[] | null
-    }
-    token: string,
-    posts: any[] | null
-}
+import { InitialState } from '../types'
 
 const initialState: InitialState = {
     mode: 'light',
