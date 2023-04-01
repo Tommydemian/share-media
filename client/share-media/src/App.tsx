@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
-import { themeSettings } from './theme.ts'
+import themeSettings from './theme.ts'
 
 // Components
 import Home from './pages/Home'

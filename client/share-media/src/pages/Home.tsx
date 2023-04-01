@@ -1,8 +1,13 @@
 import React from 'react'
+import Navbar from '../containers/Navbar'
+import { Box } from '@mui/material'
+
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <Box>
+      <Navbar />
+    </Box>
   )
 }
 

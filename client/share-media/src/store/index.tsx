@@ -4,7 +4,8 @@ import { InitialState } from '../types'
 const initialState: InitialState = {
     mode: 'light',
     user: {
-        name: '', 
+        firstname: '',
+        lastname: '', 
         friends: []
     } , 
     token: '',
@@ -24,7 +25,8 @@ export const authSlice = createSlice({
 
     },
     setLogout: (state, action) => {
-        state.user.name = ''
+        state.user.firstname = ''
+        state.user.lastname = ''
         state.token = ''
     }, // after logout user and token are empty strings. 
     setFriends: (state, action) => {

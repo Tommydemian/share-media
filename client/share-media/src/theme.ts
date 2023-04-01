@@ -1,3 +1,26 @@
+import { ThemeSettings } from './types'
+import { Palette } from '@mui/material/styles';
+
+export interface CustomPalette extends Palette {
+  palette: {
+    neutral: {
+      dark: string;
+      main: string;
+      mediumMain: string;
+      medium: string;
+      light: string;
+    },
+      background: {
+        default: string;
+        alt: string;
+      };
+      primary: {
+        light: string;
+      },
+      mode: string
+  }
+}
+
 export const colorTokens = {
     grey: {
       0: "#FFFFFF",
@@ -29,7 +52,7 @@ export const colorTokens = {
   };
   
   // mui theme settings
-  export const themeSettings = (mode: string) => {
+  const themeSettings = (mode: string):ThemeSettings => {
     return {
       palette: {
          mode: mode as "light" | "dark" | undefined,
@@ -103,3 +126,5 @@ export const colorTokens = {
       },
     };
   };
+
+  export default themeSettings;
